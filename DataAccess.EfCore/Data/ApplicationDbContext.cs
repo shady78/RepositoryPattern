@@ -14,6 +14,7 @@ public class ApplicationDbContext : DbContext
     }
     public DbSet<Developer> Developers { get; set; }
     public DbSet<Project> Projects { get; set; }
+    public DbSet<Customer> Customers { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,6 +26,10 @@ public class ApplicationDbContext : DbContext
             .HasDefaultValueSql("gen_random_uuid()");
 
         modelBuilder.Entity<Project>()
+            .Property(e => e.Id)
+            .HasDefaultValueSql("gen_random_uuid()");
+
+        modelBuilder.Entity<Customer>()
             .Property(e => e.Id)
             .HasDefaultValueSql("gen_random_uuid()");
 

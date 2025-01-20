@@ -1,8 +1,12 @@
 using DataAccess.EfCore.Data;
 using DataAccess.EfCore.Repositories;
+using DataAccess.EfCore.Services;
 using DataAccess.EfCore.UnitOfWork;
+using Domain.Configurations;
+using Domain.Enums;
 using Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +19,24 @@ builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericReposi
 builder.Services.AddTransient<IDeveloperRepository, DeveloperRepository>();
 builder.Services.AddTransient<IProjectRepository, ProjectRepository>();
 #endregion
+
+builder.Services.Configure<CacheConfiguration>(builder.Configuration.GetSection("CacheConfiguration"));
+//For In-Memory Caching
+builder.Services.AddMemoryCache();
+builder.Services.AddTransient<MemoryCacheService>();
+builder.Services.AddTransient<RedisCacheService>();
+builder.Services.AddTransient<Func<CacheTech, ICacheService>>(serviceProvider => key =>
+{
+    switch (key)
+    {
+        case CacheTech.Memory:
+            return serviceProvider.GetService<MemoryCacheService>();
+        case CacheTech.Redis:
+            return serviceProvider.GetService<RedisCacheService>();
+        default:
+            return serviceProvider.GetService<MemoryCacheService>();
+    }
+});
 
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
