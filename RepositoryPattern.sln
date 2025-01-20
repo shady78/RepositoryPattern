@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryPattern.API", "RepositoryPattern.API\RepositoryPattern.API.csproj", "{78A31CDF-2C8B-4A85-958C-E022E1CD8E2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.EfCore", "DataAccess.EfCore\DataAccess.EfCore.csproj", "{D6E6735B-4E61-4E24-8221-3E86F1E8F015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{8B460E9C-DE8B-482B-B704-227A4BBDA961}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78A31CDF-2C8B-4A85-958C-E022E1CD8E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A31CDF-2C8B-4A85-958C-E022E1CD8E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A31CDF-2C8B-4A85-958C-E022E1CD8E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A31CDF-2C8B-4A85-958C-E022E1CD8E2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E6735B-4E61-4E24-8221-3E86F1E8F015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E6735B-4E61-4E24-8221-3E86F1E8F015}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E6735B-4E61-4E24-8221-3E86F1E8F015}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E6735B-4E61-4E24-8221-3E86F1E8F015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B460E9C-DE8B-482B-B704-227A4BBDA961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B460E9C-DE8B-482B-B704-227A4BBDA961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B460E9C-DE8B-482B-B704-227A4BBDA961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B460E9C-DE8B-482B-B704-227A4BBDA961}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
